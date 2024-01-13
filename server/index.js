@@ -29,7 +29,7 @@ app.get("/", (req, res) => {
 
 
 
-const port = process.env.port;
+const port = 8000;
 
 
 app.use('/api/user', userRoute);
