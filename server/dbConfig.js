@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 
 
 const Connection = async () => {
-  const Url = "mongodb+srv://vinitpatel8896:vinitpatel8896@doctorapponitment.yjmpwjf.mongodb.net/DoctorApponitment"
+  const Url = process.env.MONGO_URL;
   try {
     await mongoose.connect(Url)
     console.log('Databse Connected successfully');

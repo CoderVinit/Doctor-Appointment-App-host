@@ -8,10 +8,15 @@ import adminRoute from './Routes/adminRoutes.js'
 import doctorRoute from './Routes/doctorRoutes.js'
 
 
+const corsOption = {
+  origin: ["http://localhost:5173", "http://localhost:4173", "https://chat-app-wft1.vercel.app", process.env.CLIENT_URL],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true,
+}
 
 
 const app = express();
-app.use(cors());
+app.use(cors(corsOption));
 app.use(bodyParser.json({ extended: true }))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.json());
@@ -24,7 +29,7 @@ app.get("/", (req, res) => {
 
 
 
-const port = 8000;
+const port = process.env.PORT;
 
 
 app.use('/api/user', userRoute);
