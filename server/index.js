@@ -9,7 +9,7 @@ import doctorRoute from './Routes/doctorRoutes.js'
 
 
 const corsOption = {
-  origin: ["http://localhost:5173", "http://localhost:4173", "https://chat-app-wft1.vercel.app", process.env.CLIENT_URL],
+  origin: ["http://localhost:5173", "http://localhost:3000", "https://chat-app-wft1.vercel.app", process.env.CLIENT_URL],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }
