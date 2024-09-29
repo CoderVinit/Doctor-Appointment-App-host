@@ -6,11 +6,7 @@ import cors from 'cors'
 import bodyParser from 'body-parser';
 import adminRoute from './Routes/adminRoutes.js'
 import doctorRoute from './Routes/doctorRoutes.js'
-import path from "path";
-import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 
 
@@ -23,8 +19,7 @@ dotenv.config();
 
 
 app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "client", "build")));
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  return res.status(200).send("server is running");
 });
 
 
